@@ -3,8 +3,8 @@ class Spree::PaymentMethodFee < ActiveRecord::Base
 
   #attr_accessible :amount, :currency, :payment_method_id
 
-  validates :currency, uniqueness: {scope: :payment_method_id}
-  validate :payment_method_confirmable
+  #validates :currency, uniqueness: {scope: :payment_method_id}
+  #validate :payment_method_confirmable
 
   # If a payment method isn't comfirmable then this extension would sneakily
   # add a fee to an order without showing the user the final total. make sure
