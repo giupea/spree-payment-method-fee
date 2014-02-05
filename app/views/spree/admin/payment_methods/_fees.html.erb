@@ -1,4 +1,4 @@
-<% unless @object.new_record? && @object[:type] != "Spree::PaymentMethod::Check" %>
+<% if !@object.new_record? && @object[:type] == "Spree::PaymentMethod::Check" %>
   <div id='payment-methods-fees-wrapper'>
     <div id='payment-methods-fees'>
       <div class="field">
