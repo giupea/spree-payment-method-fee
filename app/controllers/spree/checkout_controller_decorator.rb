@@ -55,7 +55,7 @@ Spree::CheckoutController.class_eval do
     destroy_fee_adjustments_for_order
       
     payment_attributes.each do |payment|
-      payment_method = PaymentMethod.find(payment[:payment_method_id])
+      payment_method = Spree::PaymentMethod.find(payment[:payment_method_id])
       payment_method.fees.where(currency: @order.currency).first.try do |fee|
         add_adjustment_to_order(fee)
       end
