@@ -71,7 +71,7 @@ Spree::CheckoutController.class_eval do
   end
     
   def add_adjustment_to_order(fee)
-    @order.destroy_fee_adjustments_for_order
+    destroy_fee_adjustments_for_order
 
     adjustment = @order.adjustments.new
     adjustment.source = @order
