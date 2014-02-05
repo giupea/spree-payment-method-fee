@@ -1,5 +1,4 @@
-<% if (params[:action] == 'edit') %>
-
+<% unless @object.new_record? %>
   <div id='payment-methods-fees'>
   <div class="field">
     <%= f.label :payment_method_fees, t(:payment_method_fees) %>
